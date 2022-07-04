@@ -3,6 +3,7 @@ import {gql} from "apollo-server"
 export const typeDefs=gql`
 type Query{
    posts:[Post]
+   me:User 
 }
 
 type ErrorMessage{
@@ -21,7 +22,6 @@ type User{
     id:ID!
     name:String!
     email:String!
-    profile:Profile!
     posts:[Post!]!    
 }
 type Post{
@@ -31,6 +31,7 @@ type Post{
     createdAt:String!
     published:Boolean
     user:User!
+
 }
 type Profile{
     id:ID!

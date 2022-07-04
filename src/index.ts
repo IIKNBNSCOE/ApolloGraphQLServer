@@ -2,8 +2,9 @@ import {ApolloServer,gql} from "apollo-server"
 import {typeDefs} from "./Schema"
 import {Query,Mutation} from './resolvers'
 import {PrismaClient} from '@prisma/client'
+import {Post} from './resolvers/Post'
 
-const resolvers={Query,Mutation}
+const resolvers={Query,Mutation,Post}
 export const prisma=new PrismaClient()
 
 const server=new ApolloServer({
